@@ -64,6 +64,9 @@ async def compare(ctx):
   await ctx.send(embed = em)
 
 
+###FACT LIST COMMAND
+
+#Reading the facts file and creating a list
 factsFile = open('facts.txt', 'r')
 allFacts = factsFile.read().strip()
 factsList = allFacts.split("\n")
@@ -81,18 +84,6 @@ async def factlist(ctx):
     
     await ctx.send("List is complete!")
 
-    '''
-    starterValue = ""
-
-    for i in sortedFacts:
-      starterValue = starterValue + str(i) + "\n"
-      #print(i)
-
-    em = discord.Embed(title = "Fact List", description = "Sorts all Coronavirus facts in the database by alphabetical order.", colour = ctx.author.colour)
-    em.add_field(name = "**Sorted Facts List**", value = starterValue)
-
-    await ctx.send(embed = em)
-    '''
 
 ###Commands
 
