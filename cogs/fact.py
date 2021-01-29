@@ -1,10 +1,10 @@
-import discord
 import random
 from discord.ext import commands
 
-factsFile = open('facts.txt', 'r')
-allFacts = factsFile.read().strip()
-factsList = allFacts.split("\n")
+#Reading the facts file and creating a list
+facts_file = open('facts.txt', 'r')
+all_facts = facts_file.read().strip()
+facts_list = all_facts.split("\n")
 
 class Facts(commands.Cog):
 
@@ -13,7 +13,7 @@ class Facts(commands.Cog):
 
     @commands.command(aliases=['f'])
     async def fact(self, ctx):
-      await ctx.send(f'Fun Fact: {random.choice(factsList)}')
+      await ctx.send(f'```Fun Fact: {random.choice(facts_list)}```') #Generating a random fact from the list
 
 def setup(client):
     client.add_cog(Facts(client))
